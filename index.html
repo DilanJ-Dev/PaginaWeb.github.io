@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carta 3D con Pétalos</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="petalCanvas"></canvas>
+
+  <div class="card-container" id="cardContainer">
+    <div class="card" id="letterCard">
+      <div class="card-face card-front">
+        <div class="envelope">
+          <div class="envelope-flap" id="flap"></div>
+          <div class="envelope-body"></div>
+          <div class="envelope-text">Querida Mamá</div>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div>
+          <p>Para: Nombre y Apellido</p>
+          <p>De: Nombre y Apellido</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message-opened" id="openedMessage">
+    <button id="closeMessage">Cerrar</button>
+    <p class="fancy">Querido/a [Nombre],</p>
+    <p class="fancy">Este es un mensaje especial para ti...</p>
+    <p class="fancy" style="margin-top: 40px; text-align: right;">Con cariño,<br/>[Tu nombre]</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

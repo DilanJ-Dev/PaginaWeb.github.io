@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #F5F5DC;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.card-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  border: 3px solid #aaa;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fff 80%, #ddd);
+  position: relative;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: 'Great Vibes', cursive;
+  color: #560004;
+  margin: 2px 0;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+.envelope {
+  position: relative;
+  width: 260px;
+  height: 160px;
+  background: #fff;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  z-index: 2;
+  transform-origin: top center;
+  transition: transform 0.5s ease;
+}
+
+.envelope-flap.open {
+  transform: rotateX(-120deg);
+}
+
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.envelope-text {
+  position: relative;
+  z-index: 3;
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #555;
+  margin-top: 80px;
+}
+
+.message-opened {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 350px;
+  height: 300px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  font-family: 'Great Vibes', cursive;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+.message-opened.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+#closeMessage {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f8d7da;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fancy {
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+  color: #663399;
+  margin: 10px 0;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+});
+}
